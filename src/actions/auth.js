@@ -38,3 +38,36 @@ export const getList = () => async (dispatch) => {
 	console.log (response.data.list)
   dispatch(getListAction (response.data.list))
 }
+
+export const getListHusky = () => async (dispatch) => {
+  const token = window.localStorage.getItem("token")
+	const response = await axios.get("https://dogbreed-api.q9.com.br/list/?breed=husky",
+		{
+			headers: {Authorization:token}
+		}
+	)
+	console.log (response.data.list)
+  dispatch(getListAction (response.data.list))
+}
+
+export const getListPug = () => async (dispatch) => {
+  const token = window.localStorage.getItem("token")
+	const response = await axios.get("https://dogbreed-api.q9.com.br/list/?breed=pug",
+		{
+			headers: {Authorization:token}
+		}
+	)
+	console.log (response.data.list)
+  dispatch(getListAction (response.data.list))
+}
+
+export const getListLabrador = () => async (dispatch) => {
+  const token = window.localStorage.getItem("token")
+	const response = await axios.get("https://dogbreed-api.q9.com.br/list/?breed=labrador",
+		{
+			headers: {Authorization:token}
+		}
+	)
+	console.log (response.data.list)
+  dispatch(getListAction (response.data.list))
+}

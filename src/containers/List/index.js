@@ -32,7 +32,7 @@ class ListDogs extends React.Component {
          <List>
               {
                   this.props.list.map((list) => {
-                      return(<li>{list}</li>)
+                      return(<li> <img src={list}/></li>)
                   })
               }
           </List>
