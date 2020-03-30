@@ -4,7 +4,7 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { connect } from "react-redux";
-import loginAuth from '../../actions/auth'
+import {loginAuth} from '../../actions/auth'
 
 const FormStyled = styled.form`
   width: 100%;
@@ -32,7 +32,7 @@ const TypographyStyled = styled(Typography)`
   color: white;
 `
 
-class LoginDogs extends React.Component {
+class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -45,14 +45,12 @@ class LoginDogs extends React.Component {
     this.setState({
       [event.target.name]: event.target.value
     });
-    console.log("Oi")
   };
 
   onClickLogin = (e) => {
     e.preventDefault()
     const email = this.state.email
     this.props.doLogin(email)
-    console.log("fuichamadis")
   }
 
   render() {
@@ -93,4 +91,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect( null,mapDispatchToProps)(LoginDogs);
+export default connect( null,mapDispatchToProps)(Login);
