@@ -6,6 +6,7 @@ import { routes } from '../Router';
 import {getListHusky} from "../../actions/allActions";
 import List from "@material-ui/core/List";
 import Menu from "../../components/menu";
+import {device} from "../../../src/device";
 
 const Img = styled.img`
   width: 80vh;
@@ -19,7 +20,24 @@ const Img = styled.img`
     width: 100%;
     height:100%;
 		cursor: pointer;
-	}
+  }
+  
+  @media ${device.mobileM} {
+    width: 50vh;
+    height:60vh;
+    display: flex;
+    justify-content: center;
+    margin-left: 3vh;
+
+    :hover {
+      position:relative;
+      top: 0;
+      width: 100%;
+      height:100%;
+      cursor: pointer;
+      margin:0;
+    }
+  }
 `
 
 class DogListHusky extends React.Component {
