@@ -43,8 +43,6 @@ const Img = styled.img`
 class DogListPug extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-    };
   }
 
    componentWillMount () {
@@ -61,12 +59,12 @@ class DogListPug extends React.Component {
         <div>
           <Menu />
           <List>
-          {
-              this.props.list.map((list) => {
-                  return(<li> <Img src={list}/></li>)
-              })
-          }
-        </List>
+            {
+                this.props.list.map((list) => {
+                    return(<li> <Img src={list}/></li>)
+                })
+            }
+          </List>
         </div>
       )
     }

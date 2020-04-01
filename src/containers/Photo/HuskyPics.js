@@ -21,7 +21,7 @@ const Img = styled.img`
     height:100%;
 		cursor: pointer;
   }
-  
+
   @media ${device.mobileM} {
     width: 50vh;
     height:60vh;
@@ -43,9 +43,6 @@ const Img = styled.img`
 class DogListHusky extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      
-    };
   }
 
    componentWillMount () {
@@ -56,18 +53,18 @@ class DogListHusky extends React.Component {
        }
     }
 
-  
+
     render() {
       return (
         <div>
           <Menu />
           <List>
-          {
-              this.props.list.map((list) => {
-                  return(<li> <Img src={list}/></li>)
-              })
-          }
-        </List>
+            {
+                this.props.list.map((list) => {
+                    return(<li> <Img src={list}/></li>)
+                })
+            }
+          </List>
         </div>
       )
     }

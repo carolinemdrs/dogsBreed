@@ -25,9 +25,6 @@ const ButtonStyled = styled(Button)`
   width: 100px;
   margin:5px
 `
-const TextFieldStyled = styled(TextField)`
-
-`
 const TypographyStyled = styled(Typography)`
   color: white;
 `
@@ -61,7 +58,7 @@ class Login extends React.Component {
       <div>
          
         <FormStyled >
-          <TextFieldStyled
+          <TextField
             required
             onChange={this.handleFieldChange}
             name="email"

@@ -33,6 +33,7 @@ export const getList = () => async (dispatch) => {
 			headers: {Authorization:token}
 		}
 	)
+	console.log(response.data.list)
   dispatch(getListAction (response.data.list))
 }
 
