@@ -4,7 +4,7 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { connect } from "react-redux";
-import {loginAuth} from '../../actions/auth'
+import {loginAuth} from '../../actions/allActions'
 
 const FormStyled = styled.form`
   width: 100%;
@@ -36,7 +36,7 @@ class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: "",
+      email: ""
     };
   }
 
@@ -53,11 +53,13 @@ class Login extends React.Component {
     this.props.doLogin(email)
   }
 
+
   render() {
     const { email} = this.state;
 
     return (
       <div>
+         
         <FormStyled >
           <TextFieldStyled
             required

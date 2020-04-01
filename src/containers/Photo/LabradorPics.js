@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { connect } from "react-redux";
 import { push } from "connected-react-router";
 import { routes } from '../Router';
-import {getList} from "../../actions/allActions";
+import {getListLabrador} from "../../actions/allActions";
 import List from "@material-ui/core/List";
 import Menu from "../../components/menu";
 
@@ -12,7 +12,7 @@ const Img = styled.img`
   height:60vh;
   display: flex;
   justify-content: center;
-
+  
   :hover {
     position:relative;
     top: 0;
@@ -22,26 +22,28 @@ const Img = styled.img`
 	}
 `
 
-class ListDogs extends React.Component {
+class DogListLabrador extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      
     };
   }
 
    componentWillMount () {
-       this.props.getListAction()
+      this.props.getLabradorListAction()
        const token = window.localStorage.getItem('token')
        if (!token){
         this.props.goToLoginPage()
        }
     }
 
+  
     render() {
       return (
         <div>
-          <Menu/>
-           <List>
+          <Menu />
+          <List>
           {
               this.props.list.map((list) => {
                   return(<li> <Img src={list}/></li>)
@@ -61,8 +63,8 @@ const mapStateToProps = state => ({
   function mapDispatchToProps(dispatch) {
     return {
         goToLoginPage: () => dispatch(push(routes.login)),
-        getListAction: () => dispatch(getList())
+        getLabradorListAction: () => dispatch(getListLabrador())
     };
   }
   
-  export default connect( mapStateToProps, mapDispatchToProps)(ListDogs);
+  export default connect( mapStateToProps, mapDispatchToProps)(DogListLabrador);
